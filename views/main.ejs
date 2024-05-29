@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Bakers Utility</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="main">
+        <h1 class="featured">Featured Recipe of the Day</h1>
+        <div class="recipe">
+            <% if (featuredRecipe) { %>
+                <h2><a href="/recipe/<%= featuredRecipe.slug %>"><%= featuredRecipe.title %></a></h2>
+                <p class="description"><a href="/recipe/<%= featuredRecipe.slug %>"></a> <%= featuredRecipe.description %></p>
+                <img src="<%= featuredRecipe.image %>" alt="<%= featuredRecipe.title %>" width="500">
+            <% } else { %>
+                <p>No featured recipe available currentluy (testing).</p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
+
